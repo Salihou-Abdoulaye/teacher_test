@@ -59,13 +59,13 @@ const Layout = () => {
 
       <div className="md:w-3/4 h-screen w-full ">
         <div className="space-y-3 text-center">
-          <div className="text-sm md:text-2xl text-blue-800 font-semibold mt-2">
+          <div className="text-lg px-4 md:text-2xl text-blue-800 font-semibold mt-2">
             <p>En quelle matière avez-vous besoin d'aide ?</p>
           </div>
           <div class="flex justify-center">
-            <div class="pt-2 relative mx-auto text-gray-600 md:w-2/5">
+            <div class="pt-2 relative mx-auto text-gray-600 w-4/5 xl:w-2/5">
               <input
-                class=" bg-gray-200 md:h-10 h-6 md:px-5 px-3 md:pr-16 pr-8 rounded-lg text-sm focus:outline-none w-full md:w-full"
+                class=" bg-gray-200 md:h-10 h-10 md:px-5 px-3 md:pr-16 pr-8 rounded-lg text-sm focus:outline-none w-full md:w-full"
                 type="search"
                 name="search"
                 placeholder="Search"
@@ -74,7 +74,7 @@ const Layout = () => {
 
               <button
                 type="submit"
-                class="absolute right-0 top-0 md:mt-5 md:mr-4 mt-3 mr-2"
+                class="absolute right-0 top-0 md:mt-5 md:mr-4 mt-5 mr-4"
               >
                 <svg
                   class="text-gray-600 h-4 w-4 fill-current"
@@ -89,7 +89,7 @@ const Layout = () => {
             </div>
           </div>
 
-          <div className="md:text-2xl text-sm text-blue-800 font-semibold">
+          <div className="md:text-2xl text-lg text-blue-800 font-semibold">
             <p className="ml-2">
               Les teachers d {matiere} qui pourraient vous comprendre
             </p>
