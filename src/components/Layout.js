@@ -73,7 +73,7 @@ const Layout = () => {
                 class=" bg-gray-200 md:h-10 h-10 md:px-5 px-3 md:pr-16 pr-8 rounded-lg text-sm focus:outline-none w-full md:w-full"
                 type="search"
                 name="search"
-                placeholder="Search"
+                placeholder="SVT, Maths, Anglais..."
                 onChange={(e) => setMatiere(e.target.value)}
               />
 
@@ -96,7 +96,7 @@ const Layout = () => {
 
           <div className="md:text-2xl text-lg text-blue-800 font-semibold">
             <p className="ml-2">
-              Les teachers d {matiere} qui pourraient vous comprendre
+              Les teachers de {matiere} qui pourraient vous comprendre
             </p>
           </div>
         </div>
