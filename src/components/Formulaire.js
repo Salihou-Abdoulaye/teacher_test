@@ -63,7 +63,7 @@ const Formulaire = () => {
     setPasswordShown(passwordShown ? false : true);
   };
   const togglePasswordVisiblity2 = () => {
-    setPasswordShown(passwordShown ? false : true);
+    setPasswordShown2(passwordShown2 ? false : true);
   };
   return (
     <div className="md:w-3/4 h-screen">
@@ -87,8 +87,8 @@ const Formulaire = () => {
         
         <div className="grid gap-6 mb-6 lg:grid-cols-2">
           <div>
-            <div className= {errors.name ?"bg-blue-50 border border-red-400 text-red-400 text-sm rounded-md block w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
-                :"bg-blue-50 border-gray-300 text-gray-900 text-sm rounded-sm block w-full p-2.5 focus:outline-none focus:ring-0 focus:border-gray-200 focus:border-1"}>
+            <div className= {errors.name ?"bg-blue-50 border border-red-400 text-red-400 text-sm rounded-md w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
+                :"bg-blue-50 border-gray-300 text-gray-900 text-sm rounded-sm w-full p-2.5 focus:outline-none focus:ring-0 focus:border-gray-200 focus:border-1"}>
                 <label
                 forHtml="first_name"
                 className={errors.name? 
@@ -111,8 +111,8 @@ const Formulaire = () => {
             </small>
           </div>
           <div>
-            <div className= {errors.last_name ?"bg-blue-50 border border-red-400 text-red-400 text-sm rounded-md block w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
-                :"bg-blue-50 border-gray-300 text-gray-900 text-sm rounded-sm block w-full p-2.5 focus:outline-none focus:ring-0 focus:border-gray-200 focus:border-1"}>
+            <div className= {errors.last_name ?"bg-blue-50 border border-red-400 text-red-400 text-sm rounded-md w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
+                :"bg-blue-50 border-gray-300 text-gray-900 text-sm rounded-sm w-full p-2.5 focus:outline-none focus:ring-0 focus:border-gray-200 focus:border-1"}>
                 <label
                 forHtml="last_name"
                 className={errors.last_name? 
@@ -135,8 +135,8 @@ const Formulaire = () => {
             </small>
           </div>
           <div>
-            <div className= {errors.email ?"bg-blue-50 border border-red-400 text-red-400 text-sm rounded-md block w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
-                :"bg-blue-50 border-gray-300 text-gray-900 text-sm rounded-sm block w-full p-2.5 focus:outline-none focus:ring-0 focus:border-gray-200 focus:border-1"}>
+            <div className= {errors.email ?"bg-blue-50 border border-red-400 text-red-400 text-sm rounded-md w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
+                :"bg-blue-50 border-gray-300 text-gray-900 text-sm rounded-sm w-full p-2.5 focus:outline-none focus:ring-0 focus:border-gray-200 focus:border-1"}>
                 <label
                 forHtml="email"
                 className={errors.email? 
@@ -159,8 +159,8 @@ const Formulaire = () => {
             </small>
           </div>
           <div>
-            <div className= {errors.phone ?"bg-blue-50 border border-red-400 text-red-400 text-sm rounded-md block w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
-                :"bg-blue-50 border-gray-300 text-gray-900 text-sm rounded-sm block w-full p-2.5 focus:outline-none focus:ring-0 focus:border-gray-200 focus:border-1"}>
+            <div className= {errors.phone ?"bg-blue-50 border border-red-400 text-red-400 text-sm rounded-md w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
+                :"bg-blue-50 border-gray-300 text-gray-900 text-sm rounded-sm w-full p-2.5 focus:outline-none focus:ring-0 focus:border-gray-200 focus:border-1"}>
                 <label
                 forHtml="phone"
                 className={errors.phone? 
@@ -183,8 +183,8 @@ const Formulaire = () => {
             </small>
           </div>
           <div>
-            <div className= {errors.password ?"bg-blue-50 border flex  border-red-400 text-red-400 text-sm rounded-md block w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
-                :"bg-blue-50 border-gray-300 flex text-gray-900 text-sm rounded-sm block w-full p-2.5 focus:outline-none focus:ring-0 focus:border-gray-200 focus:border-1"}>
+            <div className= {errors.password ?"bg-blue-50 border flex  border-red-400 text-red-400 text-sm rounded-md w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
+                :"bg-blue-50 border-gray-300 flex text-gray-900 text-sm rounded-sm w-full p-2.5 focus:outline-none focus:ring-0 focus:border-gray-200 focus:border-1"}>
                 <div className="w-5/6">
                     <label
                     forHtml="password"
@@ -214,8 +214,8 @@ const Formulaire = () => {
             </small>
           </div>
           <div>
-          <div className= {errors.confirmPassword ?"bg-blue-50 border flex  border-red-400 text-red-400 text-sm rounded-md block w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
-                :"bg-blue-50 border-gray-300 flex text-gray-900 text-sm rounded-sm block w-full p-2.5 focus:outline-none focus:ring-0 focus:border-gray-200 focus:border-1"}>
+          <div className= {errors.confirmPassword ?"bg-blue-50 border flex  border-red-400 text-red-400 text-sm rounded-md w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
+                :"bg-blue-50 border-gray-300 flex text-gray-900 text-sm rounded-sm  w-full p-2.5 focus:outline-none focus:ring-0 focus:border-gray-200 focus:border-1"}>
                 <div className="w-5/6">
                     <label
                     forHtml="confirmPassword"
