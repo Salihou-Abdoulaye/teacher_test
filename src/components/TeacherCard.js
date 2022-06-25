@@ -11,7 +11,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { far } from "@fortawesome/free-regular-svg-icons";
 
 library.add(far, faStar);
-
+//le composant teacherCard
 const TeacherCard = ({data}) => {
   return (
     <>
@@ -20,7 +20,7 @@ const TeacherCard = ({data}) => {
           <img
             className="mb-3 border w-20 h-20 rounded-full shadow-lg -translate-y-12 mx-auto"
             src={data.image_libre}
-            alt="image"
+            alt={data.name}
           />
           <h5 className="md:text-lg text-sm truncate text-blue-800 font-bold text-center -mt-3 -translate-y-8 ">
            

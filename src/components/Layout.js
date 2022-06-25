@@ -9,10 +9,12 @@ import { DataTeacherCard } from "./DataTeacherCard";
 import TeacherCard from "./TeacherCard";
 
 const Layout = () => {
+  //Ce state permet de stocker la valeur du champs matière definit en haut de la page
   const [matiere, setMatiere] = useState("");
 
   return (
     <div className="flex md:overflow-hidden">
+      {/* La partie du gauche qui contient les étapes ainsi que le logo */}
       <div className="w-1/4 bg-gray-200 h-screen hidden md:block text-md xl:text-2xl lg:overflow-hidden">
         <div className="mt-6 mx-10 ">
           <img src={logo} alt="logo" className="xl:w-40 w-32" />
@@ -49,8 +51,9 @@ const Layout = () => {
           />
         </div>
       </div>
-
+      {/* La partie de droite qui contient les tuiles, le titre, barre de recherche ainsi que les bouttons */}
       <div className="md:w-3/4 h-screen w-full ">
+        {/* Ce div contient le titre, barre de recherche... */}
         <div className="space-y-3 text-center">
           <div className="text-lg px-4 md:text-2xl text-blue-800 font-semibold mt-2">
             <p>En quelle matière avez-vous besoin d'aide ?</p>
@@ -88,19 +91,15 @@ const Layout = () => {
             </p>
           </div>
         </div>
-
+          {/* Ce div contient le composant teacherCard*/}
         <div className="mx-4 overflow-x-auto overflow-y-hidden list-teacher py-2 pb-5 flex space-x-10 ">
-          
             {
               DataTeacherCard.map((data, index)=>(
-                
                   <TeacherCard data={data} key={index}/>
-               
               ))
             }
-          
         </div>
-
+        {/*Ce div contient les boutons(suivant et precédent)*/}
         <div className="flex  mt-2 justify-around md:w-1/2 mx-auto">
           <div class="flex space-x-2 justify-center">
             <button
