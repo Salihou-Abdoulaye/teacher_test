@@ -25,8 +25,8 @@ const Layout = () => {
   return (
     <div className="flex md:overflow-hidden box-border">
       {/* cette div constitue la div de gauche dans laquelle est repertorier les étapes de l'application */}
-      <div className="w-1/4 bg-gray-200 h-screen hidden md:block text-md xl:text-2xl lg:overflow-hidden">
-        <div className="mt-6 mx-10 ">
+      <div className="w-1/4 bg-gray-200 h-screen hidden md:block text-md xl:text-xl lg:overflow-hidden">
+        <div className="mb-4 mx-10 ">
           <img src={logo} alt="logo" className="xl:w-40 w-32" />
         </div>
         <div className="mx-12 mt-16 text-gray-400">...</div>
@@ -37,20 +37,47 @@ const Layout = () => {
               icon={faCircleCheck}
               className="w-6 text-green-400"
             />
-            <p className="text-gray-600">Votre demande</p>
+            <p className="text-gray-600">Quelle matière ?</p>
           </div>
-          <div className="flex space-x-2 w-3/4 mx-auto">
-          <div className="rounded-2xl border-2 w-8 h-8 border-blue-600">
-              <p className="m-auto text-sm font-bold text-center mt-1 text-blue-600">2</p>
-            </div>
-            <p>Nos propositions</p>
+          <div className="flex space-x-2 text-center w-3/4 mx-auto ">
+            
+            <FontAwesomeIcon
+              icon={faCircleCheck}
+              className="w-6 text-green-400"
+            />
+            <p className="text-gray-600">Quelle classe ?</p>
           </div>
+          <div className="flex space-x-2 text-center w-3/4 mx-auto ">
+            
+            <FontAwesomeIcon
+              icon={faCircleCheck}
+              className="w-6 text-green-400"
+            />
+            <p className="text-gray-600">Domicile ou à distance ?</p>
+          </div>
+          <div className="flex space-x-2 text-center w-3/4 mx-auto ">
+            
+            <FontAwesomeIcon
+              icon={faCircleCheck}
+              className="w-6 text-green-400"
+            />
+            <p className="text-gray-600">Quel type de cours ?</p>
+          </div>
+          <div className="flex space-x-2 text-center w-3/4 mx-auto ">
+            
+            <FontAwesomeIcon
+              icon={faCircleCheck}
+              className="w-6 text-green-400"
+            />
+            <p className="text-gray-600">A qui s'adresse le cours ?</p>
+          </div>
+          
           <div className="flex space-x-2 w-3/4 mx-auto">
             
             <div className="rounded-2xl border-2 w-8 h-8 border-blue-600">
-              <p className="m-auto text-sm font-bold text-center mt-1 text-blue-600">3</p>
+              <p className="m-auto text-sm font-bold text-center mt-1 text-blue-600">6</p>
             </div>
-            <p className="">Paiement</p>
+            <p className="">Presque fini !</p>
           </div>
         </div>
         <div>

@@ -250,6 +250,7 @@ const Formulaire = () => {
           <div class="flex space-x-2 justify-center">
             <button
               type="button"
+              onClick={reset}
               className=" translate-y-4 md:text-sm text-xs text-gray-700 font-medium leading-tight uppercase hover:text-blue-700  focus:outline-none focus:ring-0 active:text-blue-800 transition duration-150 ease-in-out w-36 w-24"
             >
               Precédent
