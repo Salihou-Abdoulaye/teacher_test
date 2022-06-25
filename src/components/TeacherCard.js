@@ -9,21 +9,34 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { far } from "@fortawesome/free-regular-svg-icons";
+import image from "../img/imglibre.jpg";
 
 library.add(far, faStar);
 
 const TeacherCard = ({data}) => {
+
+const dateFormater = (date) => {
+    let newDate = new Date(date).toLocaleDateString('FR-fr', {
+        year:"numeric",
+        month:"long",
+        day:"numeric",
+        hour:"numeric",
+        minute:"numeric",
+        second:"numeric"
+    })
+    return newDate
+  } 
   return (
     <>
       <div className=" mt-14 ">
-        <div className="md:w-80 w-72 shadow-lg rounded-2xl bg-blue-100">
+        <div className="md:w-80 w-72 shadow-lg rounded-2xl flex-shrink-0 bg-blue-100">
           <img
             className="mb-3 border w-20 h-20 rounded-full shadow-lg -translate-y-12 mx-auto"
-            src={data.image_libre}
-            alt="image"
+            src={ data.avatar == null ? image : data.avatar }
+            alt={data.last_name}
           />
           <h5 className="md:text-lg text-sm truncate text-blue-800 font-bold text-center -mt-3 -translate-y-8 ">
-           
+          {data.first_name} {data.last_name}
           </h5>
           <div className="text-yellow-500 md:text-lg text-sm -translate-y-8 md:-translate-y-10 text-center">
             <FontAwesomeIcon icon="star" />
@@ -33,31 +46,36 @@ const TeacherCard = ({data}) => {
             <FontAwesomeIcon icon={["far", "star"]} />
           </div>
           <p className="text-center md:-translate-y-10 -translate-y-8 text-xs text-gray-500">
-            {data.time}
+            {dateFormater(data.since)}
           </p>
           <div className="space-y-2 md:text-sm text-xs md:-translate-y-8 -translate-y-6 text-blue-700 font-semibold mx-8">
             <div className="flex space-x-2  ">
               <FontAwesomeIcon icon={faGraduationCap} />
-              <p>{data.level}</p>
+              <p>HEC, 1ère année</p>
             </div>
             <div className="flex space-x-2 truncate">
               <FontAwesomeIcon icon={faComments} />
-              <p>{data.language}</p>
+              <p>{data.slug}</p>
             </div>
             <div className="flex space-x-2">
               <FontAwesomeIcon icon={faCircleCheck} />
-              <p>{data.graduation}</p>
+              <p>Diplome verifié</p>
             </div>
             <div className="flex space-x-2">
               <FontAwesomeIcon icon={faLocationDot} />
-              <p>{data.location}</p>
+              <p>Paris</p>
             </div>
             <div className="space-y-1">
               <h3 className="md:text-lg text-sm text-blue-800 font-semibold">
                 Description
               </h3>
               <p className="md:text-sm text-xs text-gray-500 text-justify">
-               {data.text}
+               {data.about == null ? <p className="md:text-sm text-xs text-gray-500 text-justify line-clamp-3">
+                        Debitis molestias repudiandae maxime non, amet saepe maiores
+                        harum. Doloribus repellendus voluptatum error. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam ullam quo facilis possimus. Facere numquam quas asperiores nemo soluta inventore enim, in dicta voluptatem? Dolorum perferendis odit vero dolores illum!
+                    </p> : <p className="md:text-sm text-xs text-gray-500 text-justify line-clamp-3">
+                        {data.about}
+                    </p>}
               </p>
             </div>
           </div>

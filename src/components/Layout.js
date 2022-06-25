@@ -1,18 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../img/logo (1).png";
 import circle_2 from "../img/number-circle-two-thin-svgrepo-com.svg";
 import circle_3 from "../img/number-circle-three-thin-svgrepo-com.svg";
 import image_layout from "../img/auth.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faCircleCheck} from "@fortawesome/free-solid-svg-icons";
-import { DataTeacherCard } from "./DataTeacherCard";
 import TeacherCard from "./TeacherCard";
+import axios from "axios";
 
+//Layout le composant principal
 const Layout = () => {
+
+  //Le useSate qui permet de stocker la valeur entrer dans le input de la barre de recherche
   const [matiere, setMatiere] = useState("");
+  //à partir de ce useState on stocke les données recupere de l'api
+  const [data, setData] = useState([])
+
+  //à partir de ce useEffect on a récuperer les données de l'api
+  useEffect(() => {
+    axios.get('https://www.data.gouv.fr/api/1/users').then((res)=>setData(res.data.data))
+}, []);
+
 
   return (
     <div className="flex md:overflow-hidden">
+      {/* cette div constitue la div de gauche dans laquelle est repertorier les étapes de l'application */}
       <div className="w-1/4 bg-gray-200 h-screen hidden md:block text-md xl:text-2xl lg:overflow-hidden">
         <div className="mt-6 mx-10 ">
           <img src={logo} alt="logo" className="xl:w-40 w-32" />
@@ -24,13 +36,10 @@ const Layout = () => {
               icon={faCircleCheck}
               className="w-6 text-green-400"
             />
-
             <p className="text-gray-600">Votre demande</p>
           </div>
-
           <div className="flex space-x-2 w-3/4 mx-auto">
             <img src={circle_2} alt="logo" className="w-6 " />
-
             <p className="text-gray-600">Nos propositions</p>
           </div>
           <div className="flex space-x-2 w-3/4 mx-auto">
@@ -90,10 +99,8 @@ const Layout = () => {
         <div className="mx-4 overflow-x-auto overflow-y-hidden list-teacher py-2 pb-5 flex space-x-10 ">
           
             {
-              DataTeacherCard.map((data, index)=>(
-                
+              data.map((data, index)=>(
                   <TeacherCard data={data} key={index}/>
-               
               ))
             }
           
