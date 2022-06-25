@@ -23,7 +23,7 @@ const TeacherCard = ({data}) => {
             alt={data.name}
           />
           <h5 className="md:text-lg text-sm truncate text-blue-800 font-bold text-center -mt-3 -translate-y-8 ">
-           
+          {data.name}
           </h5>
           <div className="text-yellow-500 md:text-lg text-sm -translate-y-8 md:-translate-y-10 text-center">
             <FontAwesomeIcon icon="star" />
