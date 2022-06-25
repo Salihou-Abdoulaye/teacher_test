@@ -10,13 +10,12 @@ import axios from "axios";
 
 //Layout le composant principal
 const Layout = () => {
-
-  //Le useSate qui permet de stocker la valeur entrer dans le input de la barre de recherche
+//Ce state permet de stocker la valeur du champs matière definit en haut de la page
   const [matiere, setMatiere] = useState("");
-  //à partir de ce useState on stocke les données recupere de l'api
+  //Ce state nous permet de stocker les données récuperer à partir de l'api
   const [data, setData] = useState([])
 
-  //à partir de ce useEffect on a récuperer les données de l'api
+  //à partir de ce useEffect on a récuperer les données de l'api grace à axios 
   useEffect(() => {
     axios.get('https://www.data.gouv.fr/api/1/users').then((res)=>setData(res.data.data))
 }, []);
@@ -61,8 +60,9 @@ const Layout = () => {
           />
         </div>
       </div>
-
+      {/* La partie de droite qui contient les tuiles, le titre, barre de recherche ainsi que les bouttons */}
       <div className="md:w-3/4 h-screen w-full ">
+        {/* Ce div contient le titre, barre de recherche... */}
         <div className="space-y-3 text-center">
           <div className="text-lg px-4 md:text-2xl text-blue-800 font-semibold mt-2">
             <p>En quelle matière avez-vous besoin d'aide ?</p>
@@ -100,17 +100,15 @@ const Layout = () => {
             </p>
           </div>
         </div>
-
+        {/* Ce div contient le composant teacherCard*/}
         <div className="mx-4 overflow-x-auto overflow-y-hidden list-teacher py-2 pb-5 flex space-x-10 ">
-          
             {
               data.map((data, index)=>(
                   <TeacherCard data={data} key={index}/>
               ))
-            }
-          
+            }  
         </div>
-
+        {/*Ce div contient les boutons(suivant et precédent)*/}
         <div className="flex  mt-2 justify-around md:w-1/2 mx-auto">
           <div class="flex space-x-2 justify-center">
             <button

@@ -13,8 +13,9 @@ import image from "../img/imglibre.jpg";
 
 library.add(far, faStar);
 
+//le composant teacherCard
 const TeacherCard = ({data}) => {
-
+//Cette fonction nous permet de formater la date et l'heure
 const dateFormater = (date) => {
     let newDate = new Date(date).toLocaleDateString('FR-fr', {
         year:"numeric",
