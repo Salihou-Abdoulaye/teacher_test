@@ -29,23 +29,25 @@ const Layout = () => {
         <div className="mx-12 mt-16 text-gray-400">...</div>
         <div className="mt-4 mx-auto space-y-4 text-blue-600 text-bold ">
           <div className="flex space-x-2 text-center w-3/4 mx-auto ">
+            
             <FontAwesomeIcon
               icon={faCircleCheck}
               className="w-6 text-green-400"
             />
-
             <p className="text-gray-600">Votre demande</p>
           </div>
-
           <div className="flex space-x-2 w-3/4 mx-auto">
-            <img src={circle_2} alt="logo" className="w-6 " />
-
-            <p className="text-gray-600">Nos propositions</p>
+          <div className="rounded-2xl border-2 w-8 h-8 border-blue-600">
+              <p className="m-auto text-sm font-bold text-center mt-1 text-blue-600">2</p>
+            </div>
+            <p>Nos propositions</p>
           </div>
           <div className="flex space-x-2 w-3/4 mx-auto">
-            <img src={circle_3} alt="logo" className="w-6 " />
-
-            <p className="text-gray-600">Paiement</p>
+            
+            <div className="rounded-2xl border-2 w-8 h-8 border-blue-600">
+              <p className="m-auto text-sm font-bold text-center mt-1 text-blue-600">3</p>
+            </div>
+            <p className="">Paiement</p>
           </div>
         </div>
         <div>
