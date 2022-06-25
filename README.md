@@ -3,7 +3,7 @@
 Pour réalisé ce travail basé sur le framework react js nous avons utilisé : 
 
  - Tailwind CSS pour la mise en forme qui est un framework css 
- - Axios qui client HTTP pour recuperer l'api
+ - Axios qui est un client HTTP pour recuperer l'api
  - Yup pour la validation du formulaire
  - FontAwsome pour les icones
 
