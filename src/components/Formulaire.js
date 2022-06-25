@@ -7,11 +7,13 @@ import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Formulaire = () => {
+  //cette variable contient le regex de verification du numéro de téléphone  
   const phoneRegExp =
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-  //const phoneRegInter = /^\+(?:[0-9] ?){6,14}[0-9]$/
+  //cette variable contient le regex de verification du mot de passe
   const passwordRegex =
     /^(?=.*\d{2,})(?=.*[$-/:-?{ -~!"^_`\[\]]{1,})(?=.*\w).{8,}$/;
+  //le shema de validation du formulaire   
   const validationSchema = Yup.object().shape({
     name: Yup.string()
       .required("Veuillez entrer votre prenom")
@@ -38,7 +40,7 @@ const Formulaire = () => {
       "Le mot de passe ne correspond pas"
     ),
   });
-
+  
   const { register, handleSubmit, formState, reset } = useForm({
     mode: "onBlur",
     defaultValues: {
@@ -51,32 +53,35 @@ const Formulaire = () => {
   });
 
   const { errors } = formState;
-
+ //cette fonction permet d'envoyer les données dans mon console.log
   const onSubmit = (data) => {
     console.log(data);
     reset();
   };
-
+ //ce state permet d'afficher ou de cacher le mot de passe
   const [passwordShown, setPasswordShown] = useState(false);
+   //ce state permet d'afficher ou de cacher le confirme mot de passe
   const [passwordShown2, setPasswordShown2] = useState(false);
+  //cette fonction permet d'afficher ou de cacher le mot de passe
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };
+  //cette fonction permet d'afficher ou de cacher le confirme mot de passe
   const togglePasswordVisiblity2 = () => {
     setPasswordShown2(passwordShown2 ? false : true);
   };
   return (
     <div className="md:w-3/4 h-screen">
-        <p className="text-sm m-4 text-right">
+        <p className="lg:text-sm text-xs m-4 text-right">
           Vous rencontrez des difficultés ?{" "}
-          <span className="text-sm text-right text-blue-800">
+          <span className="lg:text-sm text-right text-blue-600">
             Obtenez de l'aide
           </span>
         </p>
-    <div className="w-3/4 mt-10 h-screen mx-auto ">
+    <div className="w-3/4 lg:mt-10 h-screen mx-auto ">
       <div className="space-y-2 mb-4">
-        <h5 className="text-2xl text-blue-800 font-bold text-justify">Presque fini !</h5>
-        <p className="text-lg">
+        <h5 className="lg:text-2xl text-blue-800 font-bold text-justify">Presque fini !</h5>
+        <p className="lg:text-lg ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
           animi suscipit voluptatum voluptatibus ullam quas ea facere explicabo
           beatae nihil dolorum corrupti placeat quaerat pariatur, incidunt,
@@ -84,7 +89,6 @@ const Formulaire = () => {
         </p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        
         <div className="grid gap-6 mb-6 lg:grid-cols-2">
           <div>
             <div className= {errors.name ?"bg-blue-50 border border-red-400 text-red-400 text-sm rounded-md w-full p-2.5 focus:outline-none focus:ring-0 focus:border-red-400 focus:border-1"
@@ -151,7 +155,7 @@ const Formulaire = () => {
                 className={errors.email? "bg-blue-50 text-red-400 text-sm focus:outline-none focus:ring-0 w-full focus:border-1":
                   "bg-blue-50 text-gray-900 text-sm focus:outline-none focus:ring-0 w-full focus:border-1"}
                 {...register("email")}
-                placeholder="Michelle"
+                placeholder="johnmichelle@gmail.com"
                 />
             </div>
             <small className=" text-red-400  ">
@@ -175,7 +179,7 @@ const Formulaire = () => {
                 className={errors.phone? "bg-blue-50 text-red-400 text-sm focus:outline-none focus:ring-0 w-full focus:border-1":
                   "bg-blue-50 text-gray-900 text-sm focus:outline-none focus:ring-0 w-full focus:border-1"}
                 {...register("phone")}
-                placeholder="Michelle"
+                placeholder="07 88 99 65 41"
                 />
             </div>
             <small className=" text-red-400  ">
@@ -200,7 +204,7 @@ const Formulaire = () => {
                     className={errors.password? "bg-blue-50 text-red-400 text-sm focus:outline-none focus:ring-0 w-full focus:border-1":
                     "bg-blue-50 text-gray-900 text-sm focus:outline-none focus:ring-0 w-full focus:border-1"}
                     {...register("password")}
-                    placeholder="......."
+                    placeholder="Password"
                     />
                 </div>
                 <div className="m-auto">
@@ -231,7 +235,7 @@ const Formulaire = () => {
                     className={errors.confirmPassword? "bg-blue-50 text-red-400 text-sm focus:outline-none focus:ring-0 w-full focus:border-1":
                     "bg-blue-50 text-gray-900 text-sm focus:outline-none focus:ring-0 w-full focus:border-1"}
                     {...register("confirmPassword")}
-                    placeholder="......."
+                    placeholder="Confirm password"
                     />
                 </div>
                 <div className="m-auto">
@@ -250,8 +254,8 @@ const Formulaire = () => {
           <div class="flex space-x-2 justify-center">
             <button
               type="button"
-              onClick={reset}
-              className=" translate-y-4 md:text-sm text-xs text-gray-700 font-medium leading-tight uppercase hover:text-blue-700  focus:outline-none focus:ring-0 active:text-blue-800 transition duration-150 ease-in-out w-36 w-24"
+              onClick={() => reset()}
+              className=" translate-y-4 md:text-sm text-xs text-gray-700 font-medium leading-tight uppercase hover:text-blue-700  focus:outline-none focus:ring-0 active:text-blue-800 transition duration-150 ease-in-out md:w-36 w-24"
             >
               Precédent
             </button>

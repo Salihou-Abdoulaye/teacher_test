@@ -11,28 +11,15 @@ import Formulaire from "./Formulaire";
 //Layout le composant principal
 const Layout = () => {
 
-  //Le useSate qui permet de stocker la valeur entrer dans le input de la barre de recherche
-  const [matiere, setMatiere] = useState("");
-  //à partir de ce useState on stocke les données recupere de l'api
-  const [data, setData] = useState([])
-
-  //à partir de ce useEffect on a récuperer les données de l'api
-  useEffect(() => {
-    axios.get('https://www.data.gouv.fr/api/1/users').then((res)=>setData(res.data.data))
-}, []);
-
-
   return (
     <div className="flex md:overflow-hidden box-border">
       {/* cette div constitue la div de gauche dans laquelle est repertorier les étapes de l'application */}
       <div className="w-1/4 bg-gray-200 h-screen hidden md:block text-md xl:text-xl lg:overflow-hidden">
-        <div className="mb-4 mx-10 ">
-          <img src={logo} alt="logo" className="xl:w-40 w-32" />
+        <div className="mt-4 mx-10 ">
+          <img src={logo} alt="logo" className=" w-32" />
         </div>
-        <div className="mx-12 mt-16 text-gray-400">...</div>
-        <div className="mt-4 mx-auto space-y-4 text-blue-600 text-bold ">
+        <div className=" mt-20 mx-auto lg:text-lg text-sm   space-y-4 text-blue-600 text-bold ">
           <div className="flex space-x-2 text-center w-3/4 mx-auto ">
-            
             <FontAwesomeIcon
               icon={faCircleCheck}
               className="w-6 text-green-400"
@@ -84,10 +71,11 @@ const Layout = () => {
           <img
             src={image_layout}
             alt=""
-            className="xl:w-56 w-40 mt-56 mx-auto"
+            className=" w-40 mt-32 mx-auto"
           />
         </div>
       </div>
+      {/* Appel du composant formulaire */}
         <Formulaire/>
     </div>
   );
