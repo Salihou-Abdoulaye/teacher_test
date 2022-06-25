@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import logo from "../img/logo (1).png";
-import circle_2 from "../img/number-circle-two-thin-svgrepo-com.svg";
-import circle_3 from "../img/number-circle-three-thin-svgrepo-com.svg";
 import image_layout from "../img/auth.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -17,11 +15,14 @@ import image_libre from "../img/imglibre.jpg";
 
 library.add(far, faStar);
 
+
 const Layout = () => {
+  //Ce state permet de stocker la valeur du champs matière definit en haut de la page
   const [matiere, setMatiere] = useState("");
 
   return (
     <div className="flex md:overflow-hidden">
+      {/* La partie du gauche qui contient les étapes ainsi que le logo */}
       <div className="w-1/4 bg-gray-200 h-screen hidden md:block text-md xl:text-2xl lg:overflow-hidden">
         <div className="mt-6 mx-10 ">
           <img src={logo} alt="logo" className="xl:w-40 w-32" />
@@ -58,8 +59,9 @@ const Layout = () => {
           />
         </div>
       </div>
-
+      {/* La partie de droite qui contient les tuiles, le titre, barre de recherche ainsi que les bouttons */}
       <div className="md:w-3/4 h-screen w-full ">
+        {/* Ce div contient le titre, barre de recherche... */}
         <div className="space-y-3 text-center">
           <div className="text-lg px-4 md:text-2xl text-blue-800 font-semibold mt-2">
             <p>En quelle matière avez-vous besoin d'aide ?</p>
@@ -97,14 +99,68 @@ const Layout = () => {
             </p>
           </div>
         </div>
-
+        {/* Ce div contient les tuiles*/}
         <div className="mx-4 overflow-x-auto overflow-y-hidden list-teacher py-2 pb-5 flex space-x-10 ">
           <div className=" mt-14 ">
             <div className="md:w-80 w-72 shadow-lg rounded-2xl bg-blue-100">
+              <img className="mb-3 border w-20 h-20 rounded-full shadow-lg -translate-y-12 mx-auto" src={image_libre} alt="Michelle Platini" />
+              <h5 className="md:text-lg text-sm truncate text-blue-800 font-bold text-center -mt-3 -translate-y-8 ">
+                Michelle Platini
+              </h5>
+              <div className="text-yellow-500 md:text-lg text-sm -translate-y-8 md:-translate-y-10 text-center">
+                <FontAwesomeIcon icon="star" />
+                <FontAwesomeIcon icon="star" />
+                <FontAwesomeIcon icon="star" />
+                <FontAwesomeIcon icon="star" />
+                <FontAwesomeIcon icon={["far", "star"]} />
+              </div>
+              <p className="text-center md:-translate-y-10 -translate-y-8 text-xs text-gray-500">
+                20 heures données
+              </p>
+              <div className="space-y-2 md:text-sm text-xs md:-translate-y-8 -translate-y-6 text-blue-700 font-semibold mx-8">
+                <div className="flex space-x-2  ">
+                  <FontAwesomeIcon icon={faGraduationCap} />
+                  <p>HEC, 1ère année</p>
+                </div>
+                <div className="flex space-x-2 truncate">
+                  <FontAwesomeIcon icon={faComments} />
+                  <p>Bilingue</p>
+                </div>
+                <div className="flex space-x-2">
+                  <FontAwesomeIcon icon={faCircleCheck} />
+                  <p>Diplomé verifié</p>
+                </div>
+                <div className="flex space-x-2">
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  <p>Paris</p>
+                </div>
+                <div className="space-y-1">
+                  <h3 className="md:text-lg text-sm text-blue-800 font-semibold">
+                    Description
+                  </h3>
+                  <p className="md:text-sm text-xs text-gray-500 text-justify">
+                    Debitis molestias repudiandae maxime non, amet saepe maiores
+                    harum. Doloribus repellendus voluptatum error.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex space-x-2 justify-center">
+                <button
+                  type="button"
+                  class="translate-y-4 inline-block md:px-6 py-2.5 px-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-36"
+                >
+                  Choisir
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className=" mt-14 ">
+            <div className="md:w-80 w-72 shadow-lg rounded-2xl bg-blue-100">
               <img
                 className="mb-3 border w-20 h-20 rounded-full shadow-lg -translate-y-12 mx-auto"
                 src={image_libre}
-                alt="image"
+                alt="Michelle Platini"
               />
               <h5 className="md:text-lg text-sm truncate text-blue-800 font-bold text-center -mt-3 -translate-y-8 ">
                 Michelle Platini
@@ -162,7 +218,7 @@ const Layout = () => {
               <img
                 className="mb-3 border w-20 h-20 rounded-full shadow-lg -translate-y-12 mx-auto"
                 src={image_libre}
-                alt="image"
+                alt="Michelle Platini"
               />
               <h5 className="md:text-lg text-sm truncate text-blue-800 font-bold text-center -mt-3 -translate-y-8 ">
                 Michelle Platini
@@ -220,65 +276,7 @@ const Layout = () => {
               <img
                 className="mb-3 border w-20 h-20 rounded-full shadow-lg -translate-y-12 mx-auto"
                 src={image_libre}
-                alt="image"
-              />
-              <h5 className="md:text-lg text-sm truncate text-blue-800 font-bold text-center -mt-3 -translate-y-8 ">
-                Michelle Platini
-              </h5>
-              <div className="text-yellow-500 md:text-lg text-sm -translate-y-8 md:-translate-y-10 text-center">
-                <FontAwesomeIcon icon="star" />
-                <FontAwesomeIcon icon="star" />
-                <FontAwesomeIcon icon="star" />
-                <FontAwesomeIcon icon="star" />
-                <FontAwesomeIcon icon={["far", "star"]} />
-              </div>
-              <p className="text-center md:-translate-y-10 -translate-y-8 text-xs text-gray-500">
-                20 heures données
-              </p>
-              <div className="space-y-2 md:text-sm text-xs md:-translate-y-8 -translate-y-6 text-blue-700 font-semibold mx-8">
-                <div className="flex space-x-2  ">
-                  <FontAwesomeIcon icon={faGraduationCap} />
-                  <p>HEC, 1ère année</p>
-                </div>
-                <div className="flex space-x-2 truncate">
-                  <FontAwesomeIcon icon={faComments} />
-                  <p>Bilingue</p>
-                </div>
-                <div className="flex space-x-2">
-                  <FontAwesomeIcon icon={faCircleCheck} />
-                  <p>Diplomé verifié</p>
-                </div>
-                <div className="flex space-x-2">
-                  <FontAwesomeIcon icon={faLocationDot} />
-                  <p>Paris</p>
-                </div>
-                <div className="space-y-1">
-                  <h3 className="md:text-lg text-sm text-blue-800 font-semibold">
-                    Description
-                  </h3>
-                  <p className="md:text-sm text-xs text-gray-500 text-justify">
-                    Debitis molestias repudiandae maxime non, amet saepe maiores
-                    harum. Doloribus repellendus voluptatum error.
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex space-x-2 justify-center">
-                <button
-                  type="button"
-                  class="translate-y-4 inline-block md:px-6 py-2.5 px-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-36"
-                >
-                  Choisir
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className=" mt-14 ">
-            <div className="md:w-80 w-72 shadow-lg rounded-2xl bg-blue-100">
-              <img
-                className="mb-3 border w-20 h-20 rounded-full shadow-lg -translate-y-12 mx-auto"
-                src={image_libre}
-                alt="image"
+                alt="Michelle Platini"
               />
               <h5 className="md:text-lg text-sm truncate text-blue-800 font-bold text-center -mt-3 -translate-y-8 ">
                 Michelle Platini
@@ -332,7 +330,7 @@ const Layout = () => {
             </div>
           </div>
         </div>
-
+        {/*Ce div contient les boutons(suivant et precédent)*/}
         <div className="flex  mt-2 justify-around md:w-1/2 mx-auto">
           <div class="flex space-x-2 justify-center">
             <button
