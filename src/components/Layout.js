@@ -119,6 +119,7 @@ const Layout = () => {
               </p>
               <div className="space-y-2 md:text-sm text-xs md:-translate-y-8 -translate-y-6 text-blue-700 font-semibold mx-8">
                 <div className="flex space-x-2  ">
+
                   <FontAwesomeIcon icon={faGraduationCap} />
                   <p>HEC, 1ère année</p>
                 </div>
